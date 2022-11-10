@@ -87,11 +87,12 @@ class Game extends React.Component {
         const history = this.state.history;
         const current = history[this.state.stepNumber];
         const winner = calculateWinner(current.squares);
-
+        // const moveIndex = calculateMoveIndex(current.squares);
         const moves = history.map((step, move) => {
             const desc = move ?
                 'Go to move #' + move :
                 'Go to game start';
+
             return (
                 <li key={move}>
                     <button onClick={() => this.jumpTo(move)}>{desc}</button>
@@ -148,3 +149,7 @@ function calculateWinner(squares) {
     }
     return null;
 }
+
+// function calculateStepIndex(squares) {
+//     for(let i=0;i<;i++)
+// }
